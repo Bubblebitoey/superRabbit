@@ -816,7 +816,7 @@ cc._tmp.WebGLTextureAtlas = function () {
         //
         //vertices
         //gl.bindBuffer(gl.ARRAY_BUFFER, _t._buffersVBO[0]);
-        // XXX: update is done in draw... perhaps it should be done in a timer
+        // XXX: update is done in draw... perhaps it should be done in a updateScore
         cc.glEnableVertexAttribs(cc.VERTEX_ATTRIB_FLAG_POS_COLOR_TEX);
 
         gl.bindBuffer(gl.ARRAY_BUFFER, _t._quadsWebBuffer);

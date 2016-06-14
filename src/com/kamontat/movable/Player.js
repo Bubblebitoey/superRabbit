@@ -1,3 +1,4 @@
+//noinspection JSDuplicatedDeclaration
 /**
  * @class
  * player class in this game
@@ -32,7 +33,9 @@ var Player = cc.Sprite.extend({
     autoJump: function () {
         var action = [cc.KEY.up, cc.KEY.down, cc.KEY.left, cc.KEY.right];
         var rand = Math.floor(Math.random() * 4);
+
         this.jump(action[rand]);
+
         if (this.getPosition().x < 75) {
             this.jump(action[3]);
         }
@@ -74,6 +77,14 @@ var Player = cc.Sprite.extend({
     },
 
     /**
+     * player jump
+     */
+    jump: function () {
+        this.vy = Player.STARTING_VELOCITY;
+        this.vx = 0;
+    },
+
+    /**
      * get keycode and check which button be press
      * And make player jump to that direction
      * @param keyCode the code of keyboard
@@ -105,31 +116,34 @@ var Player = cc.Sprite.extend({
     },
 
     /**
-     * add score to this score.
-     * @param score is score of player.
+     * add score in term of lv
+     * @param lv current lv of player
      */
-    addScore: function (score) {
-        this.score = score;
+    addScore: function (lv) {
+        this.score += Number(lv);
     },
 
     /**
      * set score into localStorage.
      */
     setScoreToLocal: function () {
-        if (this.score > cc.sys.localStorage.getItem("highScore") || cc.sys.localStorage.getItem("name") === null) {
-            var name = prompt("Enter Your Name (Not over 5 letters)?");
-            cc.sys.localStorage.setItem("highScore", this.score);
+        if (this.score > cc.sys.localStorage.getItem("highScoreLabel") || cc.sys.localStorage.getItem("name") === null) {
+            do {
+                var name = prompt("Enter Your Name (Not over 5 letters)?");
+            } while (name.length >= 5);
+            cc.sys.localStorage.setItem("highScoreLabel", this.score);
             cc.sys.localStorage.setItem("name", name);
         }
-        console.log(cc.sys.localStorage.getItem("highScore"));
     },
 
     /**
      * get score from localStorage.
      */
     getScoreFromLocal: function () {
-        var text = "(" + cc.sys.localStorage.getItem("name") + ") " + cc.sys.localStorage.getItem("highScore");
-        return text;
+        if (cc.sys.localStorage.getItem("name") == null || cc.sys.localStorage.getItem("highScoreLabel") == null) {
+            return null;
+        }
+        return "(" + cc.sys.localStorage.getItem("name") + ") " + cc.sys.localStorage.getItem("highScoreLabel");
     },
 
     /**
@@ -147,7 +161,7 @@ var Player = cc.Sprite.extend({
     }
 });
 
-Player.lIFE = 5;
+Player.lIFE = 50;
 
 Player.G = 0.85;
 Player.STARTING_VELOCITY = 10;

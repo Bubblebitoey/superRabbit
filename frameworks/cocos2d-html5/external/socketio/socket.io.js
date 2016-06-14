@@ -329,7 +329,7 @@
           var timeout = this._timeout;
           debug('connect attempt will timeout after %d', timeout);
 
-          // set timer
+          // set updateScore
           var timer = setTimeout(function(){
             debug('connect attempt timed out after %d', timeout);
             openSub.destroy();
@@ -1095,7 +1095,7 @@
   module.exports = Backoff;
 
   /**
-   * Initialize backoff timer with `opts`.
+   * Initialize backoff updateScore with `opts`.
    *
    * - `min` initial timeout in milliseconds [100]
    * - `max` max timeout [10000]
@@ -3438,7 +3438,7 @@
   };
 
   /**
-   * Override `onData` to use a timer on iOS.
+   * Override `onData` to use a updateScore on iOS.
    * See: https://gist.github.com/mloughran/2052006
    *
    * @api private

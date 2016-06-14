@@ -4,17 +4,17 @@ var Obstacle = cc.Sprite.extend({
         // random obstacle pic
         this.numOfRand = Math.ceil(Math.random() * 6);
         if (this.numOfRand == 1) {
-            this.initWithFile('res/Images/Monster1.png');
+            this.initWithFile('res/Images/monsterfile/Monster1.png');
         } else if (this.numOfRand == 2) {
-            this.initWithFile('res/Images/Monster2.png');
+            this.initWithFile('res/Images/monsterfile/Monster2.png');
         } else if (this.numOfRand == 3) {
-            this.initWithFile('res/Images/Monster3.png')
+            this.initWithFile('res/Images/monsterfile/Monster3.png');
         } else if (this.numOfRand == 4) {
-            this.initWithFile('res/Images/Monster4.png')
+            this.initWithFile('res/Images/monsterfile/Monster4.png');
         } else if (this.numOfRand == 5) {
-            this.initWithFile('res/Images/Monster5.png')
+            this.initWithFile('res/Images/monsterfile/Monster5.png');
         } else {
-            this.initWithFile('res/Images/Monster6.png')
+            this.initWithFile('res/Images/monsterfile/Monster6.png');
         }
 
 

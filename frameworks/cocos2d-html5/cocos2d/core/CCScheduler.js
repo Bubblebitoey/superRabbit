@@ -97,7 +97,7 @@ cc.HashTimerEntry = cc.hashSelectorEntry = function (timers, target, timerIndex,
 };
 
 /**
- * Light weight timer
+ * Light weight updateScore
  * @class
  * @extends cc.Class
  */
@@ -112,7 +112,7 @@ cc.Timer = cc.Class.extend(/** @lends cc.Timer# */{
     _interval:0.0,
 
     /**
-     * @return {Number} returns interval of timer
+     * @return {Number} returns interval of updateScore
      */
     getInterval : function(){return this._interval;},
     /**
@@ -153,7 +153,7 @@ cc.Timer = cc.Class.extend(/** @lends cc.Timer# */{
     },
 
     /**
-     * triggers the timer
+     * triggers the updateScore
      * @param {Number} dt delta time
      */
     update:function (dt) {
@@ -162,7 +162,7 @@ cc.Timer = cc.Class.extend(/** @lends cc.Timer# */{
             this._timesExecuted = 0;
         } else {
             this._elapsed += dt;
-            if (this._runForever && !this._useDelay) {//standard timer usage
+            if (this._runForever && !this._useDelay) {//standard updateScore usage
                 if (this._elapsed >= this._interval) {
                     this.trigger();
                     this._elapsed = 0;

@@ -1,24 +1,24 @@
 {
-    "project_type": "javascript",
-    "debugMode": 1,
-    "showFPS": false,
-    "frameRate": 60,
-    "noCache": true,
-    "id": "gameCanvas",
-    "renderMode": 0,
-    "engineDir": "frameworks/cocos2d-html5",
-    "modules": [
+  "project_type": "javascript",
+  "debugMode": 1,
+  "showFPS": false,
+  "frameRate": 60,
+  "noCache": true,
+  "id": "gameCanvas",
+  "renderMode": 0,
+  "engineDir": "frameworks/cocos2d-html5",
+  "modules": [
     "cocos2d"
   ],
-    "jsList": [
-    "src/resource.js",
-    "src/GameLayer.js",
-    "src/Player.js",
-    "src/Obstacle.js",
-    "src/Item.js",
-    "src/Background.js",
-    "src/EndPage.js",
-    "src/Carrot.js",
-      "src/StartPage.js"
+  "jsList": [
+    "src/com/kamontat/main/GameLayer.js",
+    "src/com/kamontat/page/Background.js",
+    "src/com/kamontat/page/EndPage.js",
+    "src/com/kamontat/page/StartPage.js",
+    "src/com/kamontat/movable/Player.js",
+    "src/com/kamontat/movable/Obstacle.js",
+    "src/com/kamontat/collection/Item.js",
+    "src/com/kamontat/collection/Carrot.js",
+    "src/com/kamontat/resourcefile/resource.js"
   ]
 }

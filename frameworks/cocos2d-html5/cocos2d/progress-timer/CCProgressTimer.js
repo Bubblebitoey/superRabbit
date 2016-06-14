@@ -259,7 +259,7 @@ cc.ProgressTimer = cc.Node.extend(/** @lends cc.ProgressTimer# */{
     },
 
     /**
-     * Initializes a progress timer with the sprite as the shape the timer goes through
+     * Initializes a progress updateScore with the sprite as the shape the updateScore goes through
      * @function
      * @param {cc.Sprite} sprite
      * @return {Boolean}
@@ -309,7 +309,7 @@ cc.defineGetterSetter(_p, "reverseDir", _p.isReverseDirection, _p.setReverseDire
 
 
 /**
- * create a progress timer object with image file name that renders the inner sprite according to the percentage
+ * create a progress updateScore object with image file name that renders the inner sprite according to the percentage
  * @deprecated since v3.0,please use new cc.ProgressTimer(sprite) instead.
  * @param {cc.Sprite} sprite
  * @return {cc.ProgressTimer}

@@ -1,7 +1,11 @@
-var Item = cc.Sprite.extend({
+/**
+ * Created by bubblebitoey on 8/5/59.
+ */
+
+var Carrot = cc.Sprite.extend({
         ctor: function () {
             this._super();
-            this.initWithFile("res/Images/heart.png");
+            this.initWithFile("res/Images/Carrot.png");
             this.randomPos();
             this.time = 0;
             this.appear = true;
@@ -19,6 +23,7 @@ var Item = cc.Sprite.extend({
 
         hide: function () {
             this.setPosition(new cc.Point(-99, -99));
+
             this.time = 0;
             this.appear = false;
         },
@@ -26,8 +31,8 @@ var Item = cc.Sprite.extend({
         update: function () {
             this.time++;
             if (this.started) {
-                // every 5 second
-                if (this.time / 60 % Item.SECOND_TO_APPEAR == 0) {
+                // every 3 second
+                if (this.time / 60 % Carrot.SECOND_TO_APPEAR == 0) {
                     if (this.appear) {
                         this.hide();
                     } else {
@@ -55,4 +60,4 @@ var Item = cc.Sprite.extend({
     }
 );
 
-Item.SECOND_TO_APPEAR = 5;
+Carrot.SECOND_TO_APPEAR = 2;
