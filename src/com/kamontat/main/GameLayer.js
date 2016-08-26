@@ -480,6 +480,6 @@ GameLayer.STARTEXP = 5000;
 
 GameLayer.UPPOINT = {
     OBSTACLE: 500,
-    HEART: 750,
+    HEART: 5,
     CARROT: 150
 };
